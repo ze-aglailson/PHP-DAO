@@ -25,8 +25,12 @@
 
     #Executando um login
         $usuario = new Usuario();
-        $usuario->login("ze-aglailson","@senha");
-
-        echo $usuario;
+        try {
+            $usuario->login("ze-aglailson","@senha");
+            echo $usuario;    
+        } catch (\Exception $error) {
+            echo $error->getMessage();
+        }
+        
 
     
